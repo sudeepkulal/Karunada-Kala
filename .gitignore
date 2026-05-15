@@ -25,6 +25,5 @@ google-services.json
 captures/
 .externalNativeBuild/
 .cxx/
-*.apk
 *.ap_
 *.dex

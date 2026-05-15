@@ -2,6 +2,14 @@
 
 Karunada Kala is a modern Android application dedicated to preserving and celebrating the rich cultural heritage of Karnataka, India. The app connects users with traditional artisans, offers AI-powered educational content, and keeps the community updated on cultural events.
 
+## 📲 Download & Install
+
+You can download the app directly from this repository:
+
+**[Download Karunada Kala APK](./Karunada-Kala.apk)**
+
+*Note: You may need to enable "Install from Unknown Sources" on your Android device to install the APK.*
+
 ## Features ✨
 
 - **Art Form Catalog**: Explore a rich grid of Karnataka's traditional art forms (Yakshagana, Ilkal weaves, Pottery, etc.).
