@@ -52,7 +52,6 @@ fun RegisterScreen(
     var longitude by remember { mutableStateOf("") }
     var artisanType by remember { mutableStateOf(ArtisanType.WORKSHOP) }
     var imageUrl by remember { mutableStateOf("") }
-    var productImages by remember { mutableStateOf("") }
 
     var isSubmitting by remember { mutableStateOf(false) }
     var registerErr by remember { mutableStateOf("") }
@@ -108,7 +107,7 @@ fun RegisterScreen(
                                 latitude = latitude.toDoubleOrNull() ?: 0.0,
                                 longitude = longitude.toDoubleOrNull() ?: 0.0,
                                 imageUrl = imageUrl,
-                                productImages = productImages.split(",").map { it.trim() }.filter { it.isNotBlank() }
+                                productImages = emptyList() // Removed product gallery
                             )
                             viewModel.addArtisan(newArtisan) {
                                 viewModel.refreshData()
@@ -217,8 +216,6 @@ fun RegisterScreen(
                 onArtisanTypeChange = { artisanType = it },
                 imageUrl = imageUrl,
                 onImageUrlChange = { imageUrl = it },
-                productImages = productImages,
-                onProductImagesChange = { productImages = it },
                 showAccountSecurity = false,
                 showBasicInfo = false, // We already showed name, email, phone above
                 onPickOnMap = {

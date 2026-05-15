@@ -131,43 +131,6 @@ fun ArtisanProfileScreen(
                     }
                     Spacer(Modifier.height(24.dp))
 
-                    // PRD §5.3: Product Gallery (up to 6 images)
-                    Text("Product Gallery", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = KarnatakaRed)
-                    Spacer(Modifier.height(10.dp))
-                    
-                    if (artisan.productImages.isEmpty()) {
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            repeat(3) {
-                                Box(modifier = Modifier.size(120.dp).clip(RoundedCornerShape(12.dp))
-                                    .background(Brush.verticalGradient(listOf(KarnatakaYellow.copy(0.4f), KarnatakaRed.copy(0.2f)))),
-                                    contentAlignment = Alignment.Center) { Text("🎨", fontSize = 32.sp) }
-                            }
-                        }
-                    } else {
-                        LazyRow(
-                            horizontalArrangement = Arrangement.spacedBy(10.dp),
-                            contentPadding = PaddingValues(end = 20.dp)
-                        ) {
-                            items(artisan.productImages.take(6)) { img ->
-                                Card(
-                                    modifier = Modifier.size(140.dp).clip(RoundedCornerShape(12.dp))
-                                        .clickable { selectedImageUrl = img },
-                                    elevation = CardDefaults.cardElevation(2.dp)
-                                ) {
-                                    SubcomposeAsyncImage(
-                                        model = img,
-                                        contentDescription = "Product",
-                                        contentScale = ContentScale.Crop,
-                                        modifier = Modifier.fillMaxSize(),
-                                        loading = { Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator(modifier = Modifier.size(24.dp)) } },
-                                        error = { Box(Modifier.fillMaxSize().background(Color.LightGray), contentAlignment = Alignment.Center) { Icon(Icons.Default.Close, null) } }
-                                    )
-                                }
-                            }
-                        }
-                    }
-                    Spacer(Modifier.height(24.dp))
-
                     // Upcoming Workshops
                     Text("Upcoming Workshops", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = KarnatakaRed)
                     Spacer(Modifier.height(10.dp))

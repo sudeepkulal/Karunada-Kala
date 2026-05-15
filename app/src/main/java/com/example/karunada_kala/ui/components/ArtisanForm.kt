@@ -41,8 +41,6 @@ fun ArtisanFields(
     onArtisanTypeChange: (ArtisanType) -> Unit,
     imageUrl: String,
     onImageUrlChange: (String) -> Unit,
-    productImages: String,
-    onProductImagesChange: (String) -> Unit,
     showAccountSecurity: Boolean = true,
     showBasicInfo: Boolean = true,
     onPickOnMap: () -> Unit = {}
@@ -191,17 +189,6 @@ fun ArtisanFields(
         label = { Text("Profile Image URL") },
         leadingIcon = { Icon(Icons.Filled.Image, null) },
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(10.dp),
-        colors = kalaFieldColors()
-    )
-    Spacer(Modifier.height(10.dp))
-
-    OutlinedTextField(
-        value = productImages,
-        onValueChange = onProductImagesChange,
-        label = { Text("Product Gallery URLs (comma separated)") },
-        leadingIcon = { Icon(Icons.Filled.Collections, null) },
-        modifier = Modifier.fillMaxWidth().height(100.dp),
         shape = RoundedCornerShape(10.dp),
         colors = kalaFieldColors()
     )

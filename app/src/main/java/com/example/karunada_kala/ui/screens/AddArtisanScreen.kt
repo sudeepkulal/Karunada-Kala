@@ -43,7 +43,6 @@ fun AddArtisanScreen(
     var longitude by remember { mutableStateOf("") }
     var artisanType by remember { mutableStateOf(ArtisanType.WORKSHOP) }
     var imageUrl by remember { mutableStateOf("") }
-    var productImagesInput by remember { mutableStateOf("") }
     
     var isSubmitting by remember { mutableStateOf(false) }
 
@@ -72,7 +71,6 @@ fun AddArtisanScreen(
             longitude = it.longitude.toString()
             artisanType = it.type
             imageUrl = it.imageUrl
-            productImagesInput = it.productImages.joinToString(", ")
         }
     }
 
@@ -110,8 +108,6 @@ fun AddArtisanScreen(
                 onArtisanTypeChange = { artisanType = it },
                 imageUrl = imageUrl,
                 onImageUrlChange = { imageUrl = it },
-                productImages = productImagesInput,
-                onProductImagesChange = { productImagesInput = it },
                 showAccountSecurity = artisanId == null, // Only show security fields when adding new
                 onPickOnMap = {
                     navController.navigate(
@@ -145,7 +141,7 @@ fun AddArtisanScreen(
                             longitude = longitude.toDoubleOrNull() ?: 0.0,
                             type = artisanType,
                             imageUrl = imageUrl,
-                            productImages = productImagesInput.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+                            productImages = emptyList() // Product gallery removed
                         )
                         viewModel.addArtisan(artisan) {
                             isSubmitting = false
