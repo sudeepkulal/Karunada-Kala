@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.KarunadaKala" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Disables the system starting window (pre-splash) -->
+        <item name="android:windowDisablePreview">true</item>
+        <!-- Matches the background of your SplashScreen.kt for a seamless transition -->
+        <item name="android:windowBackground">@color/karnataka_red</item>
+        <item name="android:statusBarColor">@color/karnataka_red</item>
+    </style>
+</resources>

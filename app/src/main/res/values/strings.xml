@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Karunada Kala</string>
+    <string name="login_title">Karunada Kala</string>
+    <string name="login_subtitle">Sign in to continue</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_prompt">Don\'t have an account? </string>
+    <string name="register_link">Register</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_events">Events</string>
+    <string name="delete_confirmation_title">Delete Confirmation</string>
+    <string name="delete_warning">This action cannot be undone.</string>
+</resources>
